@@ -1,5 +1,5 @@
 <div class="card">
-  <div class="card-header bg-primary text-white">
+  <div class="card-header bg-dark text-white">
     Featured
   </div>
   <ul class="list-group list-group-flush">

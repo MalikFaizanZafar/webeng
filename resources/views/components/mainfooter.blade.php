@@ -44,18 +44,6 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  .nav-list li a:before {
-    content: "\f14f";
-    font: 400 21px/1 "Material Design Icons";
-    color: #4d6de6;
-    display: inline-block;
-    vertical-align: baseline;
-    margin-left: -28px;
-    margin-right: 7px;
-    opacity: 0;
-    visibility: hidden;
-    transition: .22s ease;
-  }
 </style>
 <footer class="section footer-classic bg-dark text-white bg-image py-5">
   <div class="container">
