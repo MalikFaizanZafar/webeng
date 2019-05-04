@@ -57,7 +57,7 @@
     transition: .22s ease;
   }
 </style>
-<footer class="section footer-classic context-dark bg-image py-5" style="background: #2d3246;">
+<footer class="section footer-classic bg-dark text-white bg-image py-5">
   <div class="container">
     <div class="row row-30">
       <div class="col-md-4 col-xl-5">
