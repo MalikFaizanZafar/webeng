@@ -13,8 +13,8 @@
 
 </head>
 
-<body>
-    <div class="container-fluid">
+<body style="padding:0%;">
+    <div class="container-fluid" style="padding:0%;">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
