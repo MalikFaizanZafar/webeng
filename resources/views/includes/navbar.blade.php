@@ -23,7 +23,7 @@
                             Join Us
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Sign In</a>
+                            <a class="dropdown-item" href="{{url('signin')}}">Sign In</a>
                             <a class="dropdown-item" href="{{url('signup')}}">Sign Up</a>
                         </div>
                     </li>

@@ -19,10 +19,8 @@
     <div class="container-fluid" style="padding:0%;">
         @include('includes.navbar')
         <main class="mb-5">
-            <div class="container-fluid">
-                <div class="row">
+            <div class="container-fluid mb-5">
                     @yield('content')
-                </div>
             </div>
         </main>
         @include('includes.mainfooter')

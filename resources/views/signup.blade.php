@@ -1,13 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="container-fluid" style="height: 100px">
-		<div class="row">
-			<div class="col-md-12">
-
-			</div>
-		</div>
-	</div>
-	<div class="signup-form rounded" style="background-color:#ec2c2ce3;">
+	<div class="signup-form rounded my-5 py-5" style="background-color:#ec2c2ce3;">
 		<form action="/examples/actions/confirmation.php" method="post">
 			<div class="form-header" style="background-color:#ec2c2ce3;">
 				<h2>Sign Up</h2>
