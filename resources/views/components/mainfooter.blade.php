@@ -43,7 +43,6 @@
   .social-container .col {
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
-
 </style>
 <footer class="section footer-classic bg-dark text-white bg-image py-5">
   <div class="container">
@@ -82,5 +81,25 @@
         </ul>
       </div>
     </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+        <ul class="list-unstyled list-inline social text-center">
+          <li class="list-inline-item"><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+          <li class="list-inline-item"><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+          <li class="list-inline-item"><a href="https://instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+          <li class="list-inline-item"><a href="https://google.com/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+          <li class="list-inline-item"><a href="https://gmail.com/" target="_blank"><i class="fa fa-envelope"></i></a></li>
+        </ul>
+      </div>
+      </hr>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+        <p>Follow Us On <u><a href="https://www.facebook.com/" target="_blank">Facebook</a></u></p>
+        <p class="h6">&copy All right Reserved.<a class="text-green ml-2" href="https://www.facebook.com" target="_blank">TECH-EEZ</a></p>
+      </div>
+      </hr>
+    </div>
+
   </div>
 </footer>
