@@ -2,7 +2,7 @@
 
 
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <a class="navbar-brand logo" href="https://web.facebook.com/" target="_blank">
+        <a class="navbar-brand logo" href="{{url('/')}}">
             <img class="logo" src="https://www.roughleyinsurance.com/wp-content/uploads/2011/11/Icon-Home2-150x150.png" style="width:50px;height:50px;">
         </a>
         <span class="navbar-text spanName" style="color:white; font-size:30px;"><b>TECH-EEZ</b></span>
@@ -18,16 +18,15 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Pricing</a>
             </li>
-            <!-- <li class="nav-item dropdown">
+            <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown link
+                            Join Us
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="#">Sign In</a>
+                            <a class="dropdown-item" href="{{url('signup')}}">Sign Up</a>
                         </div>
-                    </li> -->
+                    </li>
         </ul>
     </div>
     <form class="form-inline">
