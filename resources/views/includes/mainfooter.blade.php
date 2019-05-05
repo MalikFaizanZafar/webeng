@@ -73,7 +73,7 @@
       <div class="col-md-4 col-xl-3">
         <h5>Links</h5>
         <ul class="nav-list">
-          <li><a href="#">About</a></li>
+          <li><a href="{{url('about')}}">About</a></li>
           <li><a href="#">Projects</a></li>
           <li><a href="#">Blog</a></li>
           <li><a href="{{url('contact')}}">Contact Us</a></li>
