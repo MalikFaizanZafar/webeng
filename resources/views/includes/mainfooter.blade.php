@@ -76,7 +76,7 @@
           <li><a href="#">About</a></li>
           <li><a href="#">Projects</a></li>
           <li><a href="#">Blog</a></li>
-          <li><a href="#">Contacts</a></li>
+          <li><a href="{{url('contact')}}">Contact Us</a></li>
           <li><a href="#">Pricing</a></li>
         </ul>
       </div>

@@ -22,3 +22,7 @@ Route::get('/signup', function () {
 Route::get('/signin', function () {
     return view('signin');
 });
+
+Route::get('/contact', function () {
+    return view('contact');
+});
