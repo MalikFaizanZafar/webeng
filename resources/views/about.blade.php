@@ -21,6 +21,9 @@
 
 
   <div class="col-md-8">
+    <div class="d-flex justify-content-end">
+      <a href="{{ url('/newblog')}}" class="btn btn-primary">Add Blog</a>
+    </div>
     <h1 class="display-4">About Me</h1>
     <p class="lead text-left">
       Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
