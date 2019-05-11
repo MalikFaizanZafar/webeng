@@ -49,13 +49,18 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/blog', function () {
-    return view('blog');
+Route::get('/blog/{blogId}', function ($blogId) {
+    $blog = DB::table('blogs')->where('blog_id', '=', $blogId)->get();
+    $comments = DB::table('comments') ->join('users', 'comments.user_id', '=', 'users.user_id')->where('blog_id', '=', $blogId)->get();
+    return view('blog', ['blog' => $blog[0], 'comments' => $comments]);
 });
 
-Route::get('/test', function () {
-    $user = DB::table('users')->where('email', '=', "malikfaizanzafar1993@gmail.cm")->get();
-    return $user;
+Route::post('/blog', function (Request $request) {
+    $user_id = $request->input('user');
+    $blog_id = $request->input('blog');
+    $comment =  $request->input('comment');
+    DB::insert('insert into comments (user_id, description, blog_id) values (:user_id, :description, :blog_id)', ['user_id' => $user_id,'description' => $comment, 'blog_id' => $blog_id]);
+    return redirect('blog/'.$blog_id);
 });
 
 Route::get('/about', function () {

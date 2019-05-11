@@ -8,7 +8,7 @@
     
     </div>
     <div class=" mr-2 mb-2 text-muted d-flex justify-content-end">
-    <a href="{{url('blog')}}" class="btn btn-primary">View Blog</a>
+    <a href="{{ URL::to('blog/' . $blog->blog_id) }}" class="btn btn-primary">View Blog</a>
   </div>
   </div>
 @endforeach
