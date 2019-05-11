@@ -20,8 +20,25 @@ Route::get('/', function () {
     return view('welcome',['blogs' => $blogs]);
 });
 
+Route::get('/$blogId', function () {
+    $blog = DB::select("select * from blogs where blog_id");
+    return view('welcome',['blogs' => $blog]);
+});
+
 Route::get('/signup', function () {
     return view('signup');
+});
+
+Route::post('/signup', function (Request $request) {
+    $name = $request->input('name');
+    $email = $request->input('email');
+    $password =  $request->input('password');
+    $role = $request->input('role');
+    $picture = 'https://i.dailymail.co.uk/i/pix/2017/04/20/13/3F6B966D00000578-4428630-image-m-80_1492690622006.jpg';
+    $info = $request->input('info');
+    DB::insert('insert into users (name, email, password, picture, info, role) values (:name, :email, :password, :picture, :info, :role)', ['name' => $name, 'email' => $email, 'password' => $password, 'picture' => $picture, 'info' => $info, 'role' => $role]);
+    $user = DB::table('users')->where('email', '=', $email)->get();
+    return view('home', ['user' => $user[0]]);
 });
 
 Route::get('/signin', function () {
@@ -36,17 +53,16 @@ Route::get('/blog', function () {
     return view('blog');
 });
 
+Route::get('/test', function () {
+    $user = DB::table('users')->where('email', '=', "malikfaizanzafar1993@gmail.cm")->get();
+    return $user;
+});
+
 Route::get('/about', function () {
     return view('about');
 });
 
 Route::get('/newblog', function () {
-    // $image_url = 'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg';
-    // $description = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum';
-    // $title = 'Blog Title';
-    // for ($x = 0; $x <= 5; $x++) {
-    //     DB::insert('insert into blogs (title, image_url, description, author_id, date_created) values (:title, :image_url, :description, :author_id, :date_created)', ['title' => 'blog title', 'image_url' => $image_url, 'description' => $description, 'author_id' => 3, 'date_created' => '2019-05-10 23:59:59']);
-    // }
     return view('createblog');
 });
 
