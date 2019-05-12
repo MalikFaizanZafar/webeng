@@ -34,11 +34,17 @@ Route::post('/signup', function (Request $request) {
     $email = $request->input('email');
     $password =  $request->input('password');
     $role = $request->input('role');
-    $picture = 'https://i.dailymail.co.uk/i/pix/2017/04/20/13/3F6B966D00000578-4428630-image-m-80_1492690622006.jpg';
+    $filenameWithExt = $request->file('user_image')->getClientOriginalName();
+    $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+    $extension = $request->file('user_image')->getClientOriginalExtension();
+    $fileNameToStore = $filename.'_'.time().'.'.$extension;
+    $path = $request->file('user_image')->storeAs('/users', $fileNameToStore);
+    $picture = 'http://127.0.0.1:8000/storage/users/'.$fileNameToStore;
     $info = $request->input('info');
     DB::insert('insert into users (name, email, password, picture, info, role) values (:name, :email, :password, :picture, :info, :role)', ['name' => $name, 'email' => $email, 'password' => $password, 'picture' => $picture, 'info' => $info, 'role' => $role]);
     $user = DB::table('users')->where('email', '=', $email)->get();
-    return view('home', ['user' => $user[0]]);
+    $blogs = DB::table('blogs')->where('user_id', '=', $user[0]->user_id)->get();
+    return view('home', ['user' => $user[0], 'blogs' => $blogs]);
 });
 
 Route::get('/signin', function () {

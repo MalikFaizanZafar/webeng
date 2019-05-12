@@ -27,7 +27,7 @@
   </div>
 		<div class="form-group">
 			<label for="image">Profile Picture</label>
-			<input type="file" class="form-control-file" id="image" name="profileImage" placeholder="Some Description Here">
+			<input type="file" class="form-control-file" id="image" name="user_image" placeholder="Some Description Here">
 		</div>
 		<div class="form-group">
 			<label>Password</label>
