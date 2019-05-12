@@ -40,6 +40,6 @@
 			<button type="submit" class="btn btn-primary btn-block btn-lg">Sign Up</button>
 		</div>
 	</form>
-	<div class="text-center small" style="color:white">Already have an account? <a href="#" style="color:white">Login here</a></div>
+	<div class="text-center small" style="color:white">Already have an account? <a href="{{url('signin')}}" style="color:white">Login here</a></div>
 </div>
 @stop

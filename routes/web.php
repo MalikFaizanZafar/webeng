@@ -45,6 +45,17 @@ Route::get('/signin', function () {
     return view('signin');
 });
 
+Route::post('/signin', function (Request $request) {
+    $email = $request->input('email');
+    $password =  $request->input('password');
+    $user = DB::table('users')->where('email', '=', $email)->get();
+    if($user[0]->password == $password){
+        return view('home', ['user' => $user[0]]);
+    }else {
+        return Redirect::back()->withErrors(['Incorrect Email OR Password']);
+    }
+});
+
 Route::get('/contact', function () {
     return view('contact');
 });
