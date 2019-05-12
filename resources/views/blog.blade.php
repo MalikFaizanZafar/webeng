@@ -56,8 +56,9 @@
     </div>
 </div>
 <!--This is comment form-->
+@if(Session::has('userAuth'))
 <div class="container mt-5">
-    <h2>What People Think About This Blog</h2>
+    <h4>Have a Say About This Blog</h4>
     <form action="/blog" method="post">
         {{ csrf_field() }}
         <div class="form-group" style="display:none;">
@@ -77,8 +78,10 @@
         </div>
     </form>
 </div>
-<div class="container">
-    <div class="row">
+@endif
+<div class="container mt-5">
+<h3>What People are Saying About This Blog</h3>
+    <div class="row mt-5">
         @foreach ($comments as $comment)
         <div class="col-md-12 my-2">
             <div class="card">

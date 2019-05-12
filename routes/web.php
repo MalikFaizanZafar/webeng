@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,7 @@ Route::post('/signup', function (Request $request) {
     DB::insert('insert into users (name, email, password, picture, info, role) values (:name, :email, :password, :picture, :info, :role)', ['name' => $name, 'email' => $email, 'password' => $password, 'picture' => $picture, 'info' => $info, 'role' => $role]);
     $user = DB::table('users')->where('email', '=', $email)->get();
     $blogs = DB::table('blogs')->where('user_id', '=', $user[0]->user_id)->get();
+    Session::put('userAuth', true);
     return view('home', ['user' => $user[0], 'blogs' => $blogs]);
 });
 
@@ -51,11 +53,19 @@ Route::get('/signin', function () {
     return view('signin');
 });
 
+Route::get('/logout', function () {
+    Session::forget('userAuth');
+    $blogs = DB::select("select * from blogs");
+    return view('welcome',['blogs' => $blogs]);
+});
+
 Route::post('/signin', function (Request $request) {
     $email = $request->input('email');
     $password =  $request->input('password');
     $user = DB::table('users')->where('email', '=', $email)->get();
     if($user[0]->password == $password){
+        Session::put('userAuth', true);
+        $userAuth = Session::get('userAuth');
         $blogs = DB::table('blogs')->where('user_id', '=', $user[0]->user_id)->get();
         return view('home', ['user' => $user[0], 'blogs' => $blogs]);
     }else {

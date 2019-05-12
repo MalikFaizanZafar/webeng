@@ -9,28 +9,22 @@
 
 
         <ul class="navbar-nav ml-5">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-            </li>
             <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Join Us
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{{url('signin')}}">Sign In</a>
-                            <a class="dropdown-item" href="{{url('signup')}}">Sign Up</a>
-                        </div>
-                    </li>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Join Us
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{{url('signin')}}">Sign In</a>
+                    <a class="dropdown-item" href="{{url('signup')}}">Sign Up</a>
+                </div>
+            </li>
         </ul>
     </div>
     <form class="form-inline">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
     </form>
+    @if(Session::has('userAuth'))
+    <a class="nav-link text-danger" href="{{url('logout')}}">Logout <span class="sr-only">(current)</span></a>
+    @endif
 </nav>
