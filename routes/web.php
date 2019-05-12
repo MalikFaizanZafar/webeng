@@ -50,7 +50,8 @@ Route::post('/signin', function (Request $request) {
     $password =  $request->input('password');
     $user = DB::table('users')->where('email', '=', $email)->get();
     if($user[0]->password == $password){
-        return view('home', ['user' => $user[0]]);
+        $blogs = DB::table('blogs')->where('user_id', '=', $user[0]->user_id)->get();
+        return view('home', ['user' => $user[0], 'blogs' => $blogs]);
     }else {
         return Redirect::back()->withErrors(['Incorrect Email OR Password']);
     }

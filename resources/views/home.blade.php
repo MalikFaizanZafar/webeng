@@ -8,7 +8,7 @@
         <h3 class="h3 text-center mt-2">{{$user->name}}</h3>
         <h6 class="h6 text-center text-muted">{{$user->email}}</h6>
         <p class="lead text-center mt-5">
-        {{$user->info}}
+          {{$user->info}}
         </p>
         <h6 class="text-center mt-5 mb-5">
           <i class="fab fa-whatsapp fa-2x ml-3"></i>
@@ -24,7 +24,20 @@
     <div class="d-flex justify-content-end">
       <a href="{{ url('/newblog')}}" class="btn btn-primary">Add Blog</a>
     </div>
-    <h1 class="display-4">My Blogs</h1>
+    <h4 class="display-6">My Blogs</h4>
+    <div class="row mt-5">
+      @foreach ($blogs as $blog)
+      <div class="card col-md-3 mx-4 col-sm-6 col-xs-12 p-0 mb-5">
+        <img class="card-img-top" src="{{$blog->image_url}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{$blog->title}}</h5>
+        </div>
+        <div class=" mr-2 mb-2 text-muted d-flex justify-content-end">
+          <a href="{{ URL::to('blog/' . $blog->blog_id) }}" class="btn btn-primary">View Blog</a>
+        </div>
+      </div>
+      @endforeach
+    </div>
   </div>
 
 </div>
