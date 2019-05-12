@@ -30,8 +30,8 @@
           <textarea class="form-control" id="description" rows="12" name="description"></textarea>
         </div>
         <div class="form-group">
-          <label for="image">Blog Image</label>
-          <input type="file" class="form-control-file" id="image" name="image" placeholder="Some Description Here">
+          <label for="blog_image">Blog Image</label>
+          <input type="file" class="form-control-file" id="blog_image" name="blog_image" placeholder="Some Description Here">
         </div>
         <button class="btn btn-primary w-25" type="submit">Submit</button>
       </form>

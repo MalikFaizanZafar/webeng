@@ -87,8 +87,13 @@ Route::post('/newblog', function (Request $request) {
     $title = $request->input('title');
     $topic = $request->input('topic');
     $description =  $request->input('description');
-    $image_url = 'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg';
-    DB::insert('insert into blogs (title, image_url, description, author_id, topic, date_created) values (:title, :image_url, :description, :author_id, :topic, :date_created)', ['title' => $title, 'image_url' => $image_url, 'description' => $description, 'author_id' => 3, 'topic' => $topic,'date_created' => '2019-05-10 23:59:59']);
+    $filenameWithExt = $request->file('blog_image')->getClientOriginalName();
+    $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+    $extension = $request->file('blog_image')->getClientOriginalExtension();
+    $fileNameToStore = $filename.'_'.time().'.'.$extension;
+    $path = $request->file('blog_image')->storeAs('/blogs', $fileNameToStore);
+    $image_url = 'http://127.0.0.1:8000/storage/blogs/'.$fileNameToStore;
+    DB::insert('insert into blogs (title, image_url, description, user_id, topic, date_created) values (:title, :image_url, :description, :user_id, :topic, :date_created)', ['title' => $title, 'image_url' => $image_url, 'description' => $description, 'user_id' => 10, 'topic' => $topic,'date_created' => '2019-05-10 23:59:59']);
     
     $blogs = DB::select("select * from blogs");
     return view('welcome',['blogs' => $blogs]);
