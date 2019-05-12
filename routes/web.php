@@ -46,6 +46,7 @@ Route::post('/signup', function (Request $request) {
     $user = DB::table('users')->where('email', '=', $email)->get();
     $blogs = DB::table('blogs')->where('user_id', '=', $user[0]->user_id)->get();
     Session::put('userAuth', true);
+    Session::put('userId', $user[0]->user_id);
     return view('home', ['user' => $user[0], 'blogs' => $blogs]);
 });
 
@@ -55,6 +56,7 @@ Route::get('/signin', function () {
 
 Route::get('/logout', function () {
     Session::forget('userAuth');
+    Session::forget('userId');
     $blogs = DB::select("select * from blogs");
     return view('welcome',['blogs' => $blogs]);
 });
@@ -65,6 +67,7 @@ Route::post('/signin', function (Request $request) {
     $user = DB::table('users')->where('email', '=', $email)->get();
     if($user[0]->password == $password){
         Session::put('userAuth', true);
+        Session::put('userId', $user[0]->user_id);
         $userAuth = Session::get('userAuth');
         $blogs = DB::table('blogs')->where('user_id', '=', $user[0]->user_id)->get();
         return view('home', ['user' => $user[0], 'blogs' => $blogs]);

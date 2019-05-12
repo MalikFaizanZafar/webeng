@@ -63,7 +63,7 @@
         {{ csrf_field() }}
         <div class="form-group" style="display:none;">
             <label>User</label>
-            <input type="text" class="form-control" name="user" value="10" required="required">
+            <input type="text" class="form-control" name="user" value="{{Session::get('userId')}}" required="required">
         </div>
         <div class="form-group" style="display:none;">
             <label>Blog</label>
