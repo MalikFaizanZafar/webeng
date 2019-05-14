@@ -14,13 +14,13 @@
 			<label>Email Address</label>
 			<input type="email" class="form-control" name="email" required="required">
 		</div>
-		<div class="form-group">
+		<!-- <div class="form-group">
 			<label for="role">Blog Topic</label>
 			<select class="form-control" id="role" name="role">
 				<option value="Author">Author</option>
 				<option value="User">User</option>
 			</select>
-		</div>
+		</div> -->
 		<div class="form-group">
     <label for="info">Basic Info</label>
     <textarea class="form-control" id="info" rows="3" name="info"></textarea>

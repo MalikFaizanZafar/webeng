@@ -3,7 +3,7 @@
 
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <a class="navbar-brand logo" href="{{url('/')}}">
-            <img class="logo" src="https://www.roughleyinsurance.com/wp-content/uploads/2011/11/Icon-Home2-150x150.png" style="width:50px;height:50px;">
+            <img class="logo" src="https://i2.wp.com/tech-eez.com/wp-content/uploads/2016/08/TechEEZ-Profile.jpg" style="width:50px;height:50px;">
         </a>
         <span class="navbar-text spanName" style="color:white; font-size:30px;"><b>TECH-EEZ</b></span>
 

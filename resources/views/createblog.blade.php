@@ -29,6 +29,9 @@
           <label for="description">Blog Description</label>
           <textarea class="form-control" id="description" rows="12" name="description"></textarea>
         </div>
+        <div class="form-group" style="display:none;">
+          <input type="text" class="form-control" id="title" value="{{Session::get('userId')}}" name="user">
+        </div>
         <div class="form-group">
           <label for="blog_image">Blog Image</label>
           <input type="file" class="form-control-file" id="blog_image" name="blog_image" placeholder="Some Description Here">
