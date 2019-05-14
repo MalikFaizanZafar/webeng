@@ -3,7 +3,8 @@
 <div class="card col-md-3 mx-5 col-sm-6 col-xs-12 p-0 mb-5">
     <img class="card-img-top" src="{{$blog->image_url}}" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">{{$blog->title}}</h5>
+      <h6 class="card-title font-italic"><span class="font-weight-bold">Title</span> : {{$blog->title}}</h6>
+      <p class="font-italic"><span class="font-weight-bold">Author</span>   : {{$blog->name}}</p>
       <p class="card-text">{{substr($blog->description, 0, 100)}}</p>
     
     </div>

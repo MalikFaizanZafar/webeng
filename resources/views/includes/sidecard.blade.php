@@ -1,10 +1,12 @@
 <div class="card">
   <div class="card-header bg-dark text-white">
-    Featured
+    Latest Blogs
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Vestibulum at eros</li>
+    @foreach ($blogs as $blog)
+    <li class="list-group-item d-flex justify-content-around"> <span class="font-weight-light w-75">{{$blog->title}}</span>
+      <a href="{{ URL::to('blog/' . $blog->blog_id) }}" class="w-25">View Blog</a>
+    </li>
+    @endforeach
   </ul>
 </div>

@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Session;
 
 
 Route::get('/', function () {
-    $blogs = DB::select("select * from blogs");
+    // $blogs = DB::select("select * from blogs");
+    $blogs = DB::table('blogs')->join('users', 'blogs.user_id', '=', 'users.user_id')->get();
+    // return $blogs;
     return view('welcome', ['blogs' => $blogs]);
 });
 
